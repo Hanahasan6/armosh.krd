@@ -146,11 +146,29 @@ tel: 0772 511 5901
 
 
 
-  <script>
-document.querySelectorAll('.gallery-item').forEach(item => {
-  item.addEventListener('click', function() {
-    this.classList.toggle('touch-active');
+<script>
+const items = document.querySelectorAll('.gallery-item');
+
+items.forEach(item => {
+  item.addEventListener('click', function(e) {
+
+    // If clicking same item → toggle it
+    if (this.classList.contains('touch-active')) {
+      this.classList.remove('touch-active');
+    } else {
+      // Close all first
+      items.forEach(i => i.classList.remove('touch-active'));
+      // Open clicked one
+      this.classList.add('touch-active');
+    }
+
+    e.stopPropagation();
   });
+});
+
+// Tap anywhere outside → close all
+document.addEventListener('click', function() {
+  items.forEach(i => i.classList.remove('touch-active'));
 });
 </script>
   
