@@ -1,7 +1,7 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 200px; 
 }
-
 body {
   background-color: #014421;
   margin: 0;
@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5 {
 
 .title h1 { 
     color: white; 
-    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-size: 30px;
     position: relative;
     right: 10px;
     text-align: right;
@@ -142,7 +142,7 @@ h3 { color: yellow; line-height: 1.6; font-size: clamp(0.9rem, 2.5vw, 1.2rem); }
 
 #location h4, #contact h4 {
     color: yellow;
-    font-size: 32px;
+    font-size: 28px;
     text-shadow: 0px 0px 15px lime;
     border-bottom: 2px solid white;
     display: inline-block;
@@ -186,39 +186,53 @@ h3 { color: yellow; line-height: 1.6; font-size: clamp(0.9rem, 2.5vw, 1.2rem); }
 
 
 @media (max-width: 768px) {
+	html {
+    scroll-padding-top: 290px; 
+  }
     .navbar { 
         flex-direction: column; 
-        gap: 15px; 
-        text-align: center;
+        gap: 1px; 
     }
 
     .title h1 {
         text-align: center;
         right: 0;
+        font-size: 20px;
     }
 
+   
     .gallery-item { 
-        width: 90%; 
-        height: 450px; 
+        width: 95%;     
+        max-width: 340px; 
+        height: auto;     
+        aspect-ratio: 3/4; 
     } 
 
     .nav-links { 
-        gap: 31px; 
+        gap: 20px; 
         flex-wrap: wrap; 
         justify-content: center; 
+        padding: 0;
+		margin: 0;
+			
     }
 	
-	.hero-text h2 {
-	text-align: center;
-	font-size: 16px;
-	}
+    .hero-text h2 {
+        text-align: center;
+        font-size: 12px;
+		margin: 0;
+		padding: 0;
+    }
 	
-	.hero-text h3 {
-	text-align: center;
-	font-size: 17px;
-	}
+    .hero-text h3 {
+        text-align: center;
+        font-size: 12px; 
+    }
+	
+	
+	
+		
 }
-
 img {
   max-width: 100%;
   height: auto;
